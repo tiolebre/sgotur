@@ -178,4 +178,10 @@ footer {
   .botoes-midia button {
     flex: 1 1 30%;
   }
+  <nav id="menu">
+  <a href="#"><span>🏠</span><span>Página Inicial</span></a>
+  <a href="#"><span>📷</span><span>Galeria</span></a>
+  <a href="#"><span>👥</span><span>Amigos</span></a>
+  <a href="#"><span>📍</span><span>Locais</span></a>
+</nav>
 }
