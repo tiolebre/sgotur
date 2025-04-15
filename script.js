@@ -29,21 +29,69 @@ function adicionarVideo(event) {
 }
 
 function publicar() {
-  let texto = document.querySelector(".postar textarea").value;
-  if (texto.trim() === "" && midiaSelecionada === "") {
-    alert("Digite algo ou adicione uma mídia!");
-    return;
+  let conteudo = document.querySelector("textarea").value;
+  if(conteudo !== "" || midiaSelecionada !== "") {
+    let novoPost = document.createElement("div");
+    novoPost.className = "post";
+    novoPost.innerHTML = `
+      <p>${conteudo}</p>
+      ${midiaSelecionada}
+      <button class="curtir" onclick="curtir(this)">❤️(<span>0</span>)</button>
+      <div class="comentarios">
+        <input type="text" placeholder="Comentar..." onkeypress="if(event.key==='Enter') comentar(this)">
+      </div>
+    `;
+    document.getElementById("timeline").prepend(novoPost);
+    document.querySelector("textarea").value = "";
+    midiaSelecionada = "";
+  } else {
+    alert("Escreva algo ou selecione uma mídia para postar!");
   }
+}
 
-  let post = document.createElement("div");
-  post.className = "post";
-  post.innerHTML = `<p>${texto}</p>${midiaSelecionada}
-    <button class="curtir">Curtir</button>
-    <div class="comentarios">
-      <input type="text" placeholder="Comentar...">
-    </div>`;
-  document.getElementById("timeline").prepend(post);
+function curtir(botao) {
+  let contador = botao.querySelector("span");
+  contador.textContent = parseInt(contador.textContent) + 1;
+}
 
-  document.querySelector(".postar textarea").value = "";
-  midiaSelecionada = "";
+function comentar(campo) {
+  let texto = campo.value;
+  if(texto !== "") {
+    let novoComentario = document.createElement("div");
+    novoComentario.className = "comentario";
+    novoComentario.innerHTML = `
+      ${texto}
+      <button class="curtir" onclick="curtir(this)">❤️ (<span>0</span>)</button>
+      <button class="curtir" onclick="responderComentario(this)">Responder</button>
+      <div class="respostas"></div>
+    `;
+    campo.parentElement.appendChild(novoComentario);
+    campo.value = "";
+  }
+}
+
+function responderComentario(botao) {
+  let respostasDiv = botao.parentElement.querySelector(".respostas");
+  let inputResposta = document.createElement("input");
+  inputResposta.type = "text";
+  inputResposta.placeholder = "Responder...";
+  inputResposta.onkeypress = function(event) {
+    if (event.key === "Enter") {
+      let texto = inputResposta.value;
+      if (texto !== "") {
+        let novaResposta = document.createElement("div");
+        novaResposta.className = "resposta";
+        novaResposta.innerHTML = `
+          ${texto}
+          <button class=\"curtir\" onclick=\"curtir(this)\">❤️ (<span>0</span>)</button>
+          <button class=\"curtir\" onclick=\"responderComentario(this)\">Responder</button>
+          <div class=\"respostas\"></div>
+        `;
+        respostasDiv.appendChild(novaResposta);
+        inputResposta.remove();
+      }
+    }
+  };
+  respostasDiv.appendChild(inputResposta);
+  inputResposta.focus();
 }
