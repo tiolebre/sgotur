@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: sans-serif;
+    background: #f0f2f5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  header {
+    background: #0155fd;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+  }
+  
+  header h1 {
+    font-size: 20px;
+    margin-right: 15px;
+  }
+  
+  header nav {
+    display: flex;
+    gap: 15px;
+  }
+  
+  header nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 5px;
+  }
+  
+  header nav a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+  }
+  
+  header input {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  .container {
+    margin: 100px auto 20px auto;
+    width: 100%;
+    max-width: 600px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    flex: 1;
+  }
+  
+  .perfil {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .perfil img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+  
+  .postar textarea {
+    width: 100%;
+    height: 70px;
+    padding: 10px;
+  }
+  
+  .postar button {
+    background: #0256fd;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .botoes-midia {
+    margin: 10px 0;
+  }
+  
+  .botoes-midia button {
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 6px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .post {
+    background: #fdfdfd;
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.05);
+  }
+  
+  button.curtir {
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin-top: 8px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .comentarios {
+    margin-top: 10px;
+  }
+  
+  .comentarios input {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+  }
+  
+  .comentario {
+    background: #e5e5e5;
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 3px;
+  }
+  
+  .resposta {
+    background: #f3f3f3;
+    padding: 5px;
+    margin: 5px 0 0 20px;
+    border-radius: 3px;
+  }
+  
+  #timeline {
+    max-height: 500px;
+    overflow-y: auto;
+    margin-top: 20px;
+  }
+  
+  footer {
+    background: #0054fd;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    margin-top: 20px;
+  }
+  
