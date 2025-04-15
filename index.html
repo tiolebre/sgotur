@@ -2,33 +2,34 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CodeFriends - Sua Rede Social</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>SGo Tur</h1>
-    <nav>
-      <a href="#">Página Inicial</a>
-      <a href="#">Galeria</a>
-      <a href="#">Amigos</a>
-      <a href="#">Locais</a>
+    <h1>CodeFriends</h1>
+    <nav id="menu">
+      <a href="#">🏠</a>
+      <a href="#">📷</a>
+      <a href="#">👥</a>
+      <a href="#">📍</a>
     </nav>
-    <input type="text" placeholder="Buscar amigos...">
+    <input type="text" placeholder="Buscar...">
   </header>
 
   <div class="container">
     <section class="perfil">
       <img src="imagens/avatar.png" alt="Foto de Perfil">
-      <h2>Olá, Avatar!</h2>
+      <h2>Olá, Pedro!</h2>
     </section>
 
     <section class="postar">
       <textarea placeholder="No que está pensando?"></textarea>
       <div class="botoes-midia">
-        <button onclick="escolherFoto()">📸 Foto</button>
-        <button onclick="escolherGif()">🎞️ GIF</button>
-        <button onclick="escolherVideo()">📹 Vídeo</button>
+        <button onclick="escolherFoto()">📸</button>
+        <button onclick="escolherGif()">🎞️</button>
+        <button onclick="escolherVideo()">📹</button>
       </div>
       <button onclick="publicar()">Publicar</button>
     </section>
@@ -39,7 +40,7 @@
   </div>
 
   <footer>
-    <p>&copy; 2025 SGo Tur</p>
+    <p>&copy; 2025 CodeFriends</p>
   </footer>
 
   <input type="file" id="inputFoto" accept="image/*" style="display:none" onchange="adicionarFoto(event)">
