@@ -23,7 +23,7 @@ header {
   top: 0;
   width: 100%;
   z-index: 10;
-  height: 70px; /* altura fixa */
+  height: 70px;
 }
 
 header h1 {
@@ -33,7 +33,7 @@ header h1 {
 }
 
 header h1 img {
-  height: 46px; /* controla altura da logo sem estourar a barra */
+  height: 46px;
   width: auto;
   margin-right: 10px;
 }
@@ -107,23 +107,23 @@ header input {
   box-shadow: 0 5px 10px rgba(0,0,0,0.25);
 }
 
-
 .botoes-midia {
   margin: 10px 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 10px;
+  justify-content: center;
 }
 
 .botoes-midia button {
   background: linear-gradient(to right, #0099ff, #0055ff);
   border: none;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   cursor: pointer;
   border-radius: 50%;
   color: white;
-  font-size: 20px;
+  font-size: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -135,7 +135,6 @@ header input {
   transform: translateY(-1px);
   box-shadow: 0 5px 10px rgba(0,0,0,0.25);
 }
-
 
 .post {
   background: #fdfdfd;
@@ -224,32 +223,16 @@ footer {
   }
 
   .container {
-    margin: 180px auto 20px auto; /* aumentei a margem pra descolar bem do banner */
+    margin: 180px auto 20px auto;
   }
 
   .botoes-midia {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    justify-content: center;
   }
 
   .botoes-midia button {
-    flex: 1 1 30%;
-    border-radius: 50%; /* mantém os botões redondos */
-    height: 60px;
-    width: 60px;
-    font-size: 24px;
-    background: linear-gradient(to right, #0099ff, #0055ff);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 3px 5px rgba(0,0,0,0.2);
-    border: none;
-  }
-
-  .botoes-midia button:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba(0,0,0,0.25);
+    width: 55px;
+    height: 55px;
+    font-size: 22px;
   }
 }
