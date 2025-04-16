@@ -235,4 +235,36 @@ footer {
     height: 55px;
     font-size: 22px;
   }
+  .container-botoes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.botao {
+  background-color: #00008B;
+  color: #fff;
+  font-size: 28px;
+  padding: 15px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .container-botoes {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .botao {
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+  }
+}
+
 }
