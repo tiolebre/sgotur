@@ -26,16 +26,21 @@
       <h2>Olá, Avatar!</h2>
     </section>
 
-    <section class="postar">
-      <textarea placeholder="No que está pensando?"></textarea>
-         <div class="container-botoes-midia">
-        <button class="botao">📸</button>
-        <button class="botao">🎥</button>
-        <button class="botao">📹</button>
-      </div>
+   <section class="postar">
+  <textarea placeholder="No que está pensando?"></textarea>
 
-      <button onclick="publicar()">Publicar</button>
-    </section>
+  <div class="botoes-midia">
+    <button onclick="escolherFoto()">📸</button>
+    <button onclick="escolherVideo()">📹</button>
+    <button onclick="escolherGif()">🎞️</button>
+  </div>
+
+  <button onclick="publicar()">Publicar</button>
+</section>
+
+<!-- Inputs invisíveis -->
+<input type="file" id="inputFoto" accept="image/*" style="display:none" onchange="adicionarFoto(event)">
+<input type="file" id="inputVideo" accept="video/*" style="display:none" onchange="adicionarVideo(event)">
 
     <section id="timeline">
       <!-- Posts aparecem aqui -->
